@@ -1,0 +1,28 @@
+---
+# defaults file for headless-raspi-config-ansible
+
+# Required to become 'root' to successfully run most tasks (sudo isn't sufficient)
+ansible_become: yes
+ansible_become_method: sudo
+
+
+pi_hostname: raspberrypihostname
+
+pi_timezone: "US/Eastern"
+# https://wiki.debian.org/TimeZoneChanges
+
+pi_locale_setting: en_US.UTF-8
+# https://wiki.debian.org/Locale
+
+pi_keyboard_layout: us
+# https://wiki.debian.org/Keyboard
+
+pi_bootup_behavior: B1
+# B1 - "Text console, requiring user to login" 
+# B2 - "Text console, automatically logged in as '$USER' user"
+# B3 - "Desktop GUI, requiring user to login" ( NOT APPLICABLE TO RPI LITE OS )
+# B4 - "Desktop GUI, automatically logged in as '$USER' user" ( NOT APPLICABLE TO RPI LITE OS )
+
+pi_memory_split: 64
+# WARNING: There's a limit on how much memory you can commit to the GPU
+# Please see: https://www.raspberrypi.com/documentation/computers/config_txt.html#memory-options

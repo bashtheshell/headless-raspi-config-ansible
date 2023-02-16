@@ -1,0 +1,7 @@
+---
+# task file performing `raspi_config` commands
+- name: Running 'raspi-config nonint' using sub-command - {{ item.raspi_config_nonint_cmd }}
+  ansible.builtin.command: raspi-config nonint "{{ item.raspi_config_nonint_cmd }}" "{{ item.cmd_argument }}"
+  changed_when: true
+  notify: Restart RPi
+  
