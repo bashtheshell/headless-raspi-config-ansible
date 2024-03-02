@@ -24,8 +24,6 @@
     - { raspi_config_nonint_cmd: 'do_hostname', cmd_argument: "{{ pi_hostname }}" }
     # Enabling autologin at the command-line console upon booting up
     - { raspi_config_nonint_cmd: 'do_boot_behaviour', cmd_argument: "{{ pi_bootup_behavior }}" }
-    # Change the amount of memory made available to the GPU
-    - { raspi_config_nonint_cmd: 'do_memory_split', cmd_argument: "{{ pi_memory_split }}" }
 
 - name: Attempting to disable experimental desktop GL driver (using original legacy non-GL desktop driver)
   ansible.builtin.lineinfile:

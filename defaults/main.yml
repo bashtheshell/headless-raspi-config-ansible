@@ -23,6 +23,5 @@ pi_bootup_behavior: B1
 # B3 - "Desktop GUI, requiring user to login" ( NOT APPLICABLE TO RPI LITE OS )
 # B4 - "Desktop GUI, automatically logged in as '$USER' user" ( NOT APPLICABLE TO RPI LITE OS )
 
-pi_memory_split: 64
-# WARNING: There's a limit on how much memory you can commit to the GPU
-# Please see: https://www.raspberrypi.com/documentation/computers/config_txt.html#memory-options
+# The `do_memory_split()` function is now obsolete, which effectively makes `pi_memory_split:` variable invalid.
+# SOURCE: https://github.com/RPi-Distro/raspi-config/commit/1089abb821ee0f32c8451fcd62b9df88f047ea01
