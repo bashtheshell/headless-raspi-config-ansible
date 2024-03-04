@@ -26,7 +26,7 @@ You can modify any of the following variables as you wish in the role's `default
   - See the official [Debian documentation](https://wiki.debian.org/Keyboard) for more inforamtion on the keyboard layout configuration.
 - `pi_bootup_behavior`:	 Customize how you want your Pi to log in after bootup. 
   - This is [the setting](https://github.com/RPi-Distro/raspi-config/blob/408bde537671de6df2d9b91564e67132f98ffa71/raspi-config#L1395-L1398) that you'd see when you are interactively setting up the *Boot Options*.
-- ~`pi_memory_split`~: **This is [no longer supported](https://github.com/RPi-Distro/raspi-config/commit/1089abb821ee0f32c8451fcd62b9df88f047ea01), starting with Bookworm.** Please see [v1.0 release](https://github.com/bashtheshell/headless-raspi-config-ansible/tree/87186c4a4838527c579531967547774d31cb767d) if you want to use this option on an older Debian version.
+- ~~`pi_memory_split`~~: **This is [no longer supported](https://github.com/RPi-Distro/raspi-config/commit/1089abb821ee0f32c8451fcd62b9df88f047ea01), starting with Bookworm.** Please see [v1.0 release](https://github.com/bashtheshell/headless-raspi-config-ansible/tree/87186c4a4838527c579531967547774d31cb767d) if you want to use this option on an older Debian version.
 
 
 Example Playbook

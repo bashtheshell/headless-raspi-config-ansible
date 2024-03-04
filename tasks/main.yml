@@ -27,7 +27,7 @@
 
 - name: Attempting to disable experimental desktop GL driver (using original legacy non-GL desktop driver)
   ansible.builtin.lineinfile:
-    path: /boot/config.txt
+    path: /boot/firmware/config.txt
     regexp: "{{ item.pattern }}"
     line: "{{ item.new_string }}"
   loop:
