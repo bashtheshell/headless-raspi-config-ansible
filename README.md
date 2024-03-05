@@ -17,16 +17,16 @@ Role Variables
 
 You can modify any of the following variables as you wish in the role's `defaults/main.yml`:
 
-- `pi_hostname`: Customize your Pi's hostname. 
-- `pi_timezone`: Customize your Pi's timezone. 
+- `headless_raspi_config_pi_hostname`: Customize your Pi's hostname. 
+- `headless_raspi_config_pi_timezone`: Customize your Pi's timezone. 
   - Please note you must use the appropriate timezone format. See the official [Debian documentation](https://wiki.debian.org/TimeZoneChanges) for more information on the timezone configuration.
-- `pi_locale_setting`: Customize your Pi's locale's setting. 
+- `headless_raspi_config_pi_locale_setting`: Customize your Pi's locale's setting. 
   - See the official [Debian documentation](https://wiki.debian.org/Locale) for more information on the locale configuration. 
-- `pi_keyboard_layout`: Customize your keyboard layout. 
+- `headless_raspi_config_pi_keyboard_layout`: Customize your keyboard layout. 
   - See the official [Debian documentation](https://wiki.debian.org/Keyboard) for more inforamtion on the keyboard layout configuration.
-- `pi_bootup_behavior`:	 Customize how you want your Pi to log in after bootup. 
+- `headless_raspi_config_pi_bootup_behavior`:	 Customize how you want your Pi to log in after bootup. 
   - This is [the setting](https://github.com/RPi-Distro/raspi-config/blob/408bde537671de6df2d9b91564e67132f98ffa71/raspi-config#L1395-L1398) that you'd see when you are interactively setting up the *Boot Options*.
-- ~~`pi_memory_split`~~: **This is [no longer supported](https://github.com/RPi-Distro/raspi-config/commit/1089abb821ee0f32c8451fcd62b9df88f047ea01), starting with Bookworm.** Please see [v1.0 release](https://github.com/bashtheshell/headless-raspi-config-ansible/tree/87186c4a4838527c579531967547774d31cb767d) if you want to use this option on an older Debian version.
+- ~~`headless_raspi_config_pi_memory_split`~~: **This is [no longer supported](https://github.com/RPi-Distro/raspi-config/commit/1089abb821ee0f32c8451fcd62b9df88f047ea01), starting with Bookworm.** Please see [v1.0 release](https://github.com/bashtheshell/headless-raspi-config-ansible/tree/87186c4a4838527c579531967547774d31cb767d) if you want to use this option on an older Debian version.
 
 
 Example Playbook
@@ -53,8 +53,8 @@ Assuming you don't have an inventory file for your playbook but only a single Ra
       ansible.builtin.import_role:
         name: bashtheshell.headless_raspi_config
       vars:
-        pi_hostname: "hotblueberrypie"
-        pi_bootup_behavior: "B2"
+        headless_raspi_config_pi_hostname: "hotblueberrypie"
+        headless_raspi_config_pi_bootup_behavior: "B2"
 ```
 
 You can also install the role from `git` this way:
@@ -67,7 +67,7 @@ Although, when you use `git`, the `name` value for `ansible.builtin.import_role`
 If you prefer to test only the role quickly without the hassle of creating a playbook after `git` cloning the repo, you can just use the ad-hoc `ansible` command instead which is the equivalent of the above playbook:
 
 ```yaml
-ansible all -i "192.168.1.10," -m import_role -a role='./headless-raspi-config-ansible' -u pi_user -e pi_hostname="hotblueberrypie" -e pi_bootup_behavior="B2"
+ansible all -i "192.168.1.10," -m import_role -a role='./headless-raspi-config-ansible' -u pi_user -e headless_raspi_config_pi_hostname="hotblueberrypie" -e headless_raspi_config_pi_bootup_behavior="B2"
 ```
 
 
