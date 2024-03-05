@@ -1,5 +1,5 @@
 ---
 # vars file for headless-raspi-config-ansible
-pi_required_packages:
+headless_raspi_config_pi_required_packages:
   - gldriver-test
   - libgl1-mesa-dri

@@ -6,22 +6,22 @@ ansible_become: yes
 ansible_become_method: sudo
 
 
-pi_hostname: raspberrypihostname
+headless_raspi_config_pi_hostname: raspberrypihostname
 
-pi_timezone: "US/Eastern"
+headless_raspi_config_pi_timezone: "US/Eastern"
 # https://wiki.debian.org/TimeZoneChanges
 
-pi_locale_setting: en_US.UTF-8
+headless_raspi_config_pi_locale_setting: en_US.UTF-8
 # https://wiki.debian.org/Locale
 
-pi_keyboard_layout: us
+headless_raspi_config_pi_keyboard_layout: us
 # https://wiki.debian.org/Keyboard
 
-pi_bootup_behavior: B1
+headless_raspi_config_pi_bootup_behavior: B1
 # B1 - "Text console, requiring user to login" 
 # B2 - "Text console, automatically logged in as '$USER' user"
 # B3 - "Desktop GUI, requiring user to login" ( NOT APPLICABLE TO RPI LITE OS )
 # B4 - "Desktop GUI, automatically logged in as '$USER' user" ( NOT APPLICABLE TO RPI LITE OS )
 
-# The `do_memory_split()` function is now obsolete, which effectively makes `pi_memory_split:` variable invalid.
+# The `do_memory_split()` function is now obsolete, which effectively makes `headless_raspi_config_pi_memory_split:` variable invalid.
 # SOURCE: https://github.com/RPi-Distro/raspi-config/commit/1089abb821ee0f32c8451fcd62b9df88f047ea01

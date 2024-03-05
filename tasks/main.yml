@@ -9,21 +9,21 @@
   ansible.builtin.apt:
     name: "{{ item }}"
     state: present
-  loop: "{{ pi_required_packages }}"
+  loop: "{{ headless_raspi_config_pi_required_packages }}"
 
 - name: Configure several `raspi_config nonint` settings in series
   ansible.builtin.include_tasks: raspi_config.yml
   loop:
     # Set up timezone to match your location
-    - { raspi_config_nonint_cmd: 'do_change_timezone', cmd_argument: "{{ pi_timezone }}" }
+    - { raspi_config_nonint_cmd: 'do_change_timezone', cmd_argument: "{{ headless_raspi_config_pi_timezone }}" }
     # Set up language and regional settings to match your location
-    - { raspi_config_nonint_cmd: 'do_change_locale', cmd_argument: "{{ pi_locale_setting }}" }
+    - { raspi_config_nonint_cmd: 'do_change_locale', cmd_argument: "{{ headless_raspi_config_pi_locale_setting }}" }
     # Set the keyboard layout to match your keyboard
-    - { raspi_config_nonint_cmd: 'do_configure_keyboard', cmd_argument: "{{ pi_keyboard_layout }}" }
+    - { raspi_config_nonint_cmd: 'do_configure_keyboard', cmd_argument: "{{ headless_raspi_config_pi_keyboard_layout }}" }
     # Set the hostname
-    - { raspi_config_nonint_cmd: 'do_hostname', cmd_argument: "{{ pi_hostname }}" }
+    - { raspi_config_nonint_cmd: 'do_hostname', cmd_argument: "{{ headless_raspi_config_pi_hostname }}" }
     # Enabling autologin at the command-line console upon booting up
-    - { raspi_config_nonint_cmd: 'do_boot_behaviour', cmd_argument: "{{ pi_bootup_behavior }}" }
+    - { raspi_config_nonint_cmd: 'do_boot_behaviour', cmd_argument: "{{ headless_raspi_config_pi_bootup_behavior }}" }
 
 - name: Attempting to disable experimental desktop GL driver (using original legacy non-GL desktop driver)
   ansible.builtin.lineinfile:
